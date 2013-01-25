@@ -16,6 +16,13 @@
  */
 package de.systemoutprintln.junit4examples.rules;
 
+import static org.hamcrest.collection.IsEmptyCollection.empty;
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
+import static org.hamcrest.core.IsNot.not;
+
+import java.util.Collections;
+import java.util.List;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -29,6 +36,14 @@ public class ErrorCollectorRuleTest {
 	public void multipleErrors() {
 		collector.addError(new NullPointerException());
 		collector.addError(new IllegalArgumentException());
+	}
+
+	@Test
+	public void multipleChecks() {
+		List<String> myList = Collections.emptyList();
+		
+		collector.checkThat(myList, not(empty()));
+		collector.checkThat(myList, hasItem("I'm not contained :("));
 	}
 
 }
