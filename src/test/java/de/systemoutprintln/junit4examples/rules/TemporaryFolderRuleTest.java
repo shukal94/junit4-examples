@@ -18,12 +18,14 @@ package de.systemoutprintln.junit4examples.rules;
 
 import static de.systemoutprintln.junit4examples.matchers.IsFileExisting.exists;
 import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsCollectionContaining.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.AfterClass;
@@ -58,8 +60,16 @@ public class TemporaryFolderRuleTest {
 	public void createTempFolder() throws IOException {
 		// the same works for dirs... nice!
 		tempFolder = folder.newFolder("tmp");
+		File childFile = new File(tempFolder, "child.txt");
+		childFile.createNewFile();
 
-		// TODO add some examples
+		@SuppressWarnings("unchecked")
+		Collection<File> containedFiles = FileUtils.listFiles(
+				tempFolder,
+				new String[]{"txt"}, 
+				false);
+		
+		assertThat(containedFiles, hasItem(childFile));
 	}
 	
 	@AfterClass
