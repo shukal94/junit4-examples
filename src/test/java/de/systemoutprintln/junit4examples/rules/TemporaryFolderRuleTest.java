@@ -16,7 +16,7 @@
  */
 package de.systemoutprintln.junit4examples.rules;
 
-import static de.systemoutprintln.junit4examples.matchers.FileExists.exists;
+import static de.systemoutprintln.junit4examples.matchers.IsFileExisting.exists;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;

@@ -23,7 +23,7 @@ import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
-public class FileExists<T extends File> extends TypeSafeMatcher<T> {
+public class IsFileExisting<T extends File> extends TypeSafeMatcher<T> {
 
 	public void describeTo(Description description) {
 		description.appendText("exists");
@@ -36,6 +36,6 @@ public class FileExists<T extends File> extends TypeSafeMatcher<T> {
 	
 	@Factory
 	public static <T extends File> Matcher<T> exists() {
-		return new FileExists<T>();
+		return new IsFileExisting<T>();
 	}
 }
