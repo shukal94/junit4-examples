@@ -36,6 +36,7 @@ public class TemporaryFolderRuleTest {
 	@Rule
 	public TemporaryFolder folder = new TemporaryFolder();
 	
+	// static to show that files are cleaned up in @AfterClass 
 	private static File txtFile, tempFolder;
 	
 	@Test
