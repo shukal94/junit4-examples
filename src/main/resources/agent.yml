@@ -1,5 +1,5 @@
 reporting:
   enabled: true
   server:
-    hostname: https://qps.zebrunner.com/tests/runs
-    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2OCIsInBhc3N3b3JkIjoiZGVOOE1jbGxpQ3M5ejNHeDNwYkVxMFJJTE5rOExjVlMiLCJ0ZW5hbnQiOiJxcHMiLCJleHAiOjEzMDQ0MzA3NTU5N30.IzxQaSIkTwntYv2BLK2mijEU0cw8MT8_D0fqy0_xc_Uhddos8KIC5X84_KMBYrRZRrCPWgsfbkbe1SVE2VArXQ
+    hostname: 
+    access-token:
