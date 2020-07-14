@@ -18,6 +18,8 @@ package de.systemoutprintln.junit4examples.categories;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Category can be used as class level annotation. This will add all methods to
@@ -26,8 +28,11 @@ import org.junit.experimental.categories.Category;
 @Category(value = { IntegrationTests.class })
 public class RemoteServicesTest {
 
+	private Logger LOGGER = LogManager.getLogger(RemoteServicesTest.class);
+
 	@Test
 	public void aTest() {
+		LOGGER.info("Log4j2 test");
 		System.out.println("I'm slow, because my class annotation says so!");
 	}
 	

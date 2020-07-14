@@ -20,14 +20,26 @@ import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
 
+//import ch.qos.logback.classic.Logger;
+import de.systemoutprintln.junit4examples.categories.ClientTest;
+import de.systemoutprintln.junit4examples.categories.RemoteServicesTest;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BasicsTest {
+
+//	private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(BasicsTest.class);
+//private final static Logger LOGGER = Logger.getLogger(BasicsTest.class);
+private Logger LOGGER = LogManager.getLogger(BasicsTest.class);
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -62,6 +74,9 @@ public class BasicsTest {
 
 	@Test
 	public void failingTestWithException() {
+		LOGGER.info("Logback info");
+		LOGGER.debug("Logback debug");
+		LOGGER.error("Logback error");
 		System.out.println("I fail with an unexpected Exception!");
 		throw new RuntimeException();
 	}

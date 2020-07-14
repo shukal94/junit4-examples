@@ -49,9 +49,102 @@
 	  <dependency>
 		  <groupId>com.zebrunner</groupId>
 		  <artifactId>agent-junit</artifactId>
-		  <version>1.0.0.16-SNAPSHOT</version>
+		  <version>1.0.0.21-SNAPSHOT</version>
+		  <scope>test</scope>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>log4j</groupId>
+		  <artifactId>log4j</artifactId>
+		  <version>1.2.17</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.apache.logging.log4j</groupId>
+		  <artifactId>log4j-api</artifactId>
+		  <version>2.13.3</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.logging.log4j</groupId>
+		  <artifactId>log4j-core</artifactId>
+		  <version>2.13.3</version>
 	  </dependency>
 
   </dependencies>
+
+<!--	<build>-->
+<!--		<plugins>-->
+<!--			&lt;!&ndash; This provides the path to the Java agent &ndash;&gt;-->
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-dependency-plugin</artifactId>-->
+<!--				<version>3.1.2</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>getClasspathFilenames</id>-->
+<!--						<goals>-->
+<!--							<goal>properties</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-surefire-plugin</artifactId>-->
+<!--				<version>2.22.2</version>-->
+<!--				<configuration>-->
+<!--					<argLine>-javaagent:${com.zebrunner:agent-junit:jar}</argLine>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+<!--		</plugins>-->
+<!--	</build>-->
+	<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+		<!-- This provides the path to the Java agent -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>3.1.2</version>
+			<executions>
+				<execution>
+					<id>copy-agent</id>
+					<phase>process-test-classes</phase>
+					<goals>
+						<goal>copy</goal>
+					</goals>
+					<configuration>
+						<artifactItems>
+							<artifactItem>
+								<groupId>com.zebrunner</groupId>
+								<artifactId>agent-junit</artifactId>
+								<version>1.0.0.21-SNAPSHOT</version>
+								<outputDirectory>${project.build.directory}/agents</outputDirectory>
+								<destFileName>zebrunner-agent.jar</destFileName>
+							</artifactItem>
+						</artifactItems>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.22.2</version>
+			<configuration>
+				<argLine>-javaagent:${project.build.directory}/agents/zebrunner-agent.jar</argLine>
+			</configuration>
+		</plugin>
+	</plugins>
+	</build>
+
+
 
 </project>

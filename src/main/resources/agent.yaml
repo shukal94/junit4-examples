@@ -1,0 +1,5 @@
+reporting:
+  enabled: true
+  server:
+    hostname: https://qps.zebrunner.com
+    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2OCIsInBhc3N3b3JkIjoiZGVOOE1jbGxpQ3M5ejNHeDNwYkVxMFJJTE5rOExjVlMiLCJ0ZW5hbnQiOiJxcHMiLCJleHAiOjEzMDQ0MzMwNTk3Mn0.kDUY30NABWgcF5Pq92bxLSqpALjhE81jVE1GwYwGHcOc_Up0jPJaVkuC1DCqSONeq7j-1H6vrU2UskukX3ALlQ

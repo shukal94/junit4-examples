@@ -16,6 +16,8 @@
  */
 package de.systemoutprintln.junit4examples.categories;
 
+import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -25,8 +27,10 @@ import org.junit.experimental.categories.Category;
  */
 public class ClientTest {
 
+	private final static Logger LOGGER = Logger.getLogger(ClientTest.class);
 	@Test
 	public void fastTest() {
+		LOGGER.info("Log4j info");
 		System.out.println("I run fast!");
 	}
 	
