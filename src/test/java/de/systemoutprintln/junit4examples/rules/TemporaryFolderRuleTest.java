@@ -27,12 +27,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.apache.commons.io.FileUtils;
 import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
+@Maintainer("sshukalovich")
 public class TemporaryFolderRuleTest {
 
 	@Rule

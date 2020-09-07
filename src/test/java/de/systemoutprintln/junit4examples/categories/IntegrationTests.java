@@ -17,8 +17,11 @@
 package de.systemoutprintln.junit4examples.categories;
 
 
+import com.zebrunner.agent.core.annotation.Maintainer;
+
 /**
  * Marker interface for slow running integration tests
  */
+@Maintainer("sshukalovich")
 public interface IntegrationTests extends SlowTests {
 }

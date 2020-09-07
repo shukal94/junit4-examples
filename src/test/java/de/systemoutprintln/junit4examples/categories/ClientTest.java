@@ -16,6 +16,7 @@
  */
 package de.systemoutprintln.junit4examples.categories;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,6 +26,7 @@ import org.junit.experimental.categories.Category;
  * Only some tests are declared as being slow, so not all tests will be executed
  * by the SlowTestsSuite
  */
+@Maintainer("sshukalovich")
 public class ClientTest {
 
 	private final static Logger LOGGER = Logger.getLogger(ClientTest.class);

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.zebrunner:agent-core:1.1.0.72-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-core/1.1.0.72-SNAPSHOT/agent-core-1.1.0.72-20200903.095832-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-core/1.1.0.72-SNAPSHOT/agent-core-1.1.0.72-20200903.095832-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-core/1.1.0.72-SNAPSHOT/agent-core-1.1.0.72-20200903.095832-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

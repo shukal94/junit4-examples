@@ -1,11 +1,13 @@
 package de.systemoutprintln.junit4examples.rules;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 
+@Maintainer("sshukalovich")
 public class TestNameRuleTest {
 	
 	@Rule

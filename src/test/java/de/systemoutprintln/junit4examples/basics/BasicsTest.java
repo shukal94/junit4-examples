@@ -21,6 +21,7 @@ import static org.junit.Assert.fail;
 import java.util.concurrent.TimeUnit;
 
 //import ch.qos.logback.classic.Logger;
+import com.zebrunner.agent.core.annotation.Maintainer;
 import de.systemoutprintln.junit4examples.categories.ClientTest;
 import de.systemoutprintln.junit4examples.categories.RemoteServicesTest;
 //import org.apache.logging.log4j.LogManager;
@@ -35,11 +36,9 @@ import org.junit.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+@Maintainer("sshukalovich")
 public class BasicsTest {
-
-//	private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(BasicsTest.class);
-//private final static Logger LOGGER = Logger.getLogger(BasicsTest.class);
-private Logger LOGGER = LogManager.getLogger(BasicsTest.class);
+	private Logger LOGGER = LogManager.getLogger(BasicsTest.class);
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

@@ -19,12 +19,14 @@ package de.systemoutprintln.junit4examples.parameterized;
 import java.util.Arrays;
 import java.util.List;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
+@Maintainer("sshukalovich")
 public class ParameterizedTest {
 
 	private final int aParameter;

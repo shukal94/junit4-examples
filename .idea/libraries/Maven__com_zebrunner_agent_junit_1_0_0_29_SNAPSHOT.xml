@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.zebrunner:agent-junit:1.0.0.29-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-junit/1.0.0.29-SNAPSHOT/agent-junit-1.0.0.29-20200904.092157-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-junit/1.0.0.29-SNAPSHOT/agent-junit-1.0.0.29-20200904.092157-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/zebrunner/agent-junit/1.0.0.29-SNAPSHOT/agent-junit-1.0.0.29-20200904.092157-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

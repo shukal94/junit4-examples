@@ -1,0 +1,473 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.systemoutprintln:junit4examples:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 82, column 11
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------< de.systemoutprintln:junit4examples >-----------------
+[INFO] Building junit4examples 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ junit4examples ---
+[INFO] Deleting /Users/sergeyshukalovich/Documents/junit4-examples/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ junit4examples ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ junit4examples ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/sergeyshukalovich/Documents/junit4-examples/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ junit4examples ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/sergeyshukalovich/Documents/junit4-examples/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ junit4examples ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 17 source files to /Users/sergeyshukalovich/Documents/junit4-examples/target/test-classes
+[WARNING] /Users/sergeyshukalovich/Documents/junit4-examples/src/test/java/de/systemoutprintln/junit4examples/rules/ExpectedExceptionRuleTest.java: Some input files use or override a deprecated API.
+[WARNING] /Users/sergeyshukalovich/Documents/junit4-examples/src/test/java/de/systemoutprintln/junit4examples/rules/ExpectedExceptionRuleTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:copy (copy-agent) @ junit4examples ---
+[INFO] Configured Artifact: com.zebrunner:agent-junit:1.0.0.21-SNAPSHOT:jar
+[INFO] Copying agent-junit-1.0.0.21-SNAPSHOT.jar to /Users/sergeyshukalovich/Documents/junit4-examples/target/agents/zebrunner-agent.jar
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ junit4examples ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.systemoutprintln.junit4examples.basics.BasicsTest
+This is executed once before any test runs.
+This is executed once before every test.
+I pass, although an exception is thrown!
+This is executed once after every test.
+This is executed once before every test.
+I pass because my exception doesn't take too long.
+This is executed once after every test.
+This is executed once before every test.
+I fail because my exception takes too long.
+This is executed once after every test.
+This is executed once before every test.
+I fail, because the wrong exception is thrown!
+This is executed once after every test.
+This is executed once before every test.
+I fail! :(
+This is executed once after every test.
+This is executed once before every test.
+I fail with an unexpected Exception!
+This is executed once after every test.
+This is executed once before every test.
+I'm a simple test that passes!
+This is executed once after every test.
+This is executed once after all tests have been run.
+[ERROR] Tests run: 8, Failures: 1, Errors: 3, Skipped: 1, Time elapsed: 11.452 s <<< FAILURE! - in de.systemoutprintln.junit4examples.basics.BasicsTest
+[ERROR] failingTestWithTimeout(de.systemoutprintln.junit4examples.basics.BasicsTest)  Time elapsed: 1.161 s  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 1000 milliseconds
+	at app//de.systemoutprintln.junit4examples.basics.BasicsTest.failingTestWithTimeout(BasicsTest.java:110)
+
+[ERROR] failingTestWithWrongException(de.systemoutprintln.junit4examples.basics.BasicsTest)  Time elapsed: 0.148 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.RuntimeException>
+	at de.systemoutprintln.junit4examples.basics.BasicsTest.failingTestWithWrongException(BasicsTest.java:86)
+
+[ERROR] failingTest(de.systemoutprintln.junit4examples.basics.BasicsTest)  Time elapsed: 0.139 s  <<< FAILURE!
+java.lang.AssertionError
+	at de.systemoutprintln.junit4examples.basics.BasicsTest.failingTest(BasicsTest.java:71)
+
+[ERROR] failingTestWithException(de.systemoutprintln.junit4examples.basics.BasicsTest)  Time elapsed: 0.203 s  <<< ERROR!
+java.lang.RuntimeException
+	at de.systemoutprintln.junit4examples.basics.BasicsTest.failingTestWithException(BasicsTest.java:80)
+
+[INFO] Running de.systemoutprintln.junit4examples.parameterized.ParameterizedTest
+aParameter: 0
+anotherParameter: 1
+aParameter: 0
+anotherParameter: 10
+aParameter: 0
+anotherParameter: 250
+aParameter: 0
+anotherParameter: 2500
+aParameter: 0
+anotherParameter: 10000
+aParameter: 1
+anotherParameter: 1
+aParameter: 1
+anotherParameter: 10
+aParameter: 1
+anotherParameter: 250
+aParameter: 1
+anotherParameter: 2500
+aParameter: 1
+anotherParameter: 10000
+aParameter: 10
+anotherParameter: 1
+aParameter: 10
+anotherParameter: 10
+aParameter: 10
+anotherParameter: 250
+aParameter: 10
+anotherParameter: 2500
+aParameter: 10
+anotherParameter: 10000
+aParameter: 250
+anotherParameter: 1
+aParameter: 250
+anotherParameter: 10
+aParameter: 250
+anotherParameter: 250
+aParameter: 250
+anotherParameter: 2500
+aParameter: 250
+anotherParameter: 10000
+aParameter: 2500
+anotherParameter: 1
+aParameter: 2500
+anotherParameter: 10
+aParameter: 2500
+anotherParameter: 250
+aParameter: 2500
+anotherParameter: 2500
+aParameter: 2500
+anotherParameter: 10000
+aParameter: 10000
+anotherParameter: 1
+aParameter: 10000
+anotherParameter: 10
+aParameter: 10000
+anotherParameter: 250
+aParameter: 10000
+anotherParameter: 2500
+aParameter: 10000
+anotherParameter: 10000
+[ERROR] Tests run: 30, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.223 s <<< FAILURE! - in de.systemoutprintln.junit4examples.parameterized.ParameterizedTest
+[ERROR] parameterized[20](de.systemoutprintln.junit4examples.parameterized.ParameterizedTest)  Time elapsed: 0.185 s  <<< ERROR!
+java.lang.RuntimeException
+	at de.systemoutprintln.junit4examples.parameterized.ParameterizedTest.parameterized(ParameterizedTest.java:83)
+
+[INFO] Running de.systemoutprintln.junit4examples.parameterized.TheoriesTest
+[ERROR] Tests run: 3, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.073 s <<< FAILURE! - in de.systemoutprintln.junit4examples.parameterized.TheoriesTest
+[ERROR] Test mechanism  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+
+[ERROR] chunkTheory(de.systemoutprintln.junit4examples.parameterized.TheoriesTest)  Time elapsed: 0.071 s  <<< FAILURE!
+org.junit.experimental.theories.internal.ParameterizedAssertionError: chunkTheory("0" <from sizes[0]>, "0" <from sizes[0]>)
+Caused by: java.lang.NullPointerException
+
+[ERROR] Test mechanism  Time elapsed: 0.072 s  <<< ERROR!
+java.lang.NullPointerException
+
+[INFO] Running de.systemoutprintln.junit4examples.rules.TestNameRuleTest
+Starting anotherTest...
+Running anotherTest...
+Done with anotherTest!
+Starting aTest...
+Running aTest...
+Done with aTest!
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.557 s - in de.systemoutprintln.junit4examples.rules.TestNameRuleTest
+[INFO] Running de.systemoutprintln.junit4examples.rules.TemporaryFolderRuleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.59 s - in de.systemoutprintln.junit4examples.rules.TemporaryFolderRuleTest
+[INFO] Running de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest
+[ERROR] Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 1.41 s <<< FAILURE! - in de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest
+[ERROR] wrongExpectedException(de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest)  Time elapsed: 0.152 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: an instance of java.lang.IllegalArgumentException
+     but: <java.lang.RuntimeException> is a java.lang.RuntimeException
+Stacktrace was: java.lang.RuntimeException
+	at de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest.wrongExpectedException(ExpectedExceptionRuleTest.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall$original$KqLKFVBI(FrameworkMethod.java:59)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall$original$KqLKFVBI$accessor$Xu7XmtoU(FrameworkMethod.java)
+	at org.junit.runners.model.FrameworkMethod$1$auxiliary$BYBGMcdb.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunReflectiveCall.intercept(RunReflectiveCall.java:83)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:258)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild$original$ee7SZdYa(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild$original$ee7SZdYa$accessor$OJCZ8KKj(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner$auxiliary$b5p4H5Zg.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunChild.intercept(RunChild.java:57)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.JUnit4.runChild$accessor$7JZhY1O7(JUnit4.java)
+	at org.junit.runners.JUnit4$auxiliary$ThInspVr.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunChild.intercept(RunChild.java:57)
+	at org.junit.runners.JUnit4.runChild(JUnit4.java)
+	at org.junit.runners.JUnit4.runChild(JUnit4.java)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run$original$r0DxS5mX(ParentRunner.java:413)
+	at org.junit.runners.ParentRunner.run$original$r0DxS5mX$accessor$dRoUiuLK(ParentRunner.java)
+	at org.junit.runners.ParentRunner$auxiliary$uQlyfgXi.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner.run$accessor$OJCZ8KKj(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner$auxiliary$epKrRCkm.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.BlockJUnit4ClassRunner.run(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.JUnit4.run$accessor$7JZhY1O7(JUnit4.java)
+	at org.junit.runners.JUnit4$auxiliary$2AdWVKkx.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.JUnit4.run(JUnit4.java)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+[ERROR] unexpectedException(de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest)  Time elapsed: 0.141 s  <<< ERROR!
+java.lang.RuntimeException
+	at de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest.unexpectedException(ExpectedExceptionRuleTest.java:38)
+
+[INFO] Running de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest
+[ERROR] Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.776 s <<< FAILURE! - in de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest
+[ERROR] multipleChecks(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)  Time elapsed: 0.105 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: not an empty collection
+     but: was <[]>
+	at de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleChecks(ErrorCollectorRuleTest.java:47)
+
+[ERROR] multipleChecks(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)  Time elapsed: 0.232 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: a collection containing "I'm not contained :("
+     but: 
+	at de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleChecks(ErrorCollectorRuleTest.java:48)
+
+[ERROR] multipleErrors(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)  Time elapsed: 0.132 s  <<< ERROR!
+java.lang.NullPointerException
+	at de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleErrors(ErrorCollectorRuleTest.java:39)
+
+[ERROR] multipleErrors(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)  Time elapsed: 0.271 s  <<< ERROR!
+java.lang.IllegalArgumentException
+	at de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleErrors(ErrorCollectorRuleTest.java:40)
+
+[INFO] Running de.systemoutprintln.junit4examples.matchers.MatchersTest
+[ERROR] Tests run: 9, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 2.423 s <<< FAILURE! - in de.systemoutprintln.junit4examples.matchers.MatchersTest
+[ERROR] assertNotEqualsFail(de.systemoutprintln.junit4examples.matchers.MatchersTest)  Time elapsed: 0.108 s  <<< FAILURE!
+java.lang.AssertionError
+	at de.systemoutprintln.junit4examples.matchers.MatchersTest.assertNotEqualsFail(MatchersTest.java:82)
+
+[ERROR] assertThatEqualFail(de.systemoutprintln.junit4examples.matchers.MatchersTest)  Time elapsed: 0.139 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: ""
+     but: was "I like using JUnit 4's matchers!"
+	at de.systemoutprintln.junit4examples.matchers.MatchersTest.assertThatEqualFail(MatchersTest.java:52)
+
+[ERROR] assertEqualToFail(de.systemoutprintln.junit4examples.matchers.MatchersTest)  Time elapsed: 0.145 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[I like using JUnit 4's matchers!]> but was:<[]>
+	at de.systemoutprintln.junit4examples.matchers.MatchersTest.assertEqualToFail(MatchersTest.java:57)
+
+[ERROR] assertThatNotEqualFail(de.systemoutprintln.junit4examples.matchers.MatchersTest)  Time elapsed: 0.143 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: not "I like using JUnit 4's matchers!"
+     but: was "I like using JUnit 4's matchers!"
+	at de.systemoutprintln.junit4examples.matchers.MatchersTest.assertThatNotEqualFail(MatchersTest.java:77)
+
+[INFO] Running de.systemoutprintln.junit4examples.categories.ClientTest
+I'm a slow running test...
+I test performance and may therefore be slow...
+I run fast!
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.803 s - in de.systemoutprintln.junit4examples.categories.ClientTest
+[INFO] Running de.systemoutprintln.junit4examples.categories.RemoteServicesTest
+I'm also slow...
+I'm slow, because my class annotation says so!
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.536 s - in de.systemoutprintln.junit4examples.categories.RemoteServicesTest
+[WARNING] ForkStarter IOException: 275 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+276 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+277 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/sergeyshukalovich/Documents/junit4-examples/target/classes/logback.xml]
+462 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+463 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [com.zebrunner.agent.core.appender.logback.ReportingAppender]
+472 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [ReportingAppender]
+479 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:18 - no applicable action for [encoder], current ElementPath  is [[configuration][appender][encoder]]
+479 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@5:22 - no applicable action for [pattern], current ElementPath  is [[configuration][appender][encoder][pattern]]
+480 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+480 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [ReportingAppender] to Logger[ROOT]
+480 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+483 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@48524010 - Registering current configuration as safe fallback point. See the dump file /Users/sergeyshukalovich/Documents/junit4-examples/target/surefire-reports/2020-09-07T15-28-21_403-jvmRun1.dumpstream
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   BasicsTest.failingTest:71
+[ERROR]   MatchersTest.assertEqualToFail:57 expected:<[I like using JUnit 4's matchers!]> but was:<[]>
+[ERROR]   MatchersTest.assertNotEqualsFail:82
+[ERROR]   MatchersTest.assertThatEqualFail:52 
+Expected: ""
+     but: was "I like using JUnit 4's matchers!"
+[ERROR]   MatchersTest.assertThatNotEqualFail:77 
+Expected: not "I like using JUnit 4's matchers!"
+     but: was "I like using JUnit 4's matchers!"
+[ERROR]   TheoriesTest.chunkTheory chunkTheory("0" <from sizes[0]>, "0" <from sizes[0]>)
+[ERROR] de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleChecks(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)
+[ERROR]   Run 1: ErrorCollectorRuleTest.multipleChecks:47 
+Expected: not an empty collection
+     but: was <[]>
+[ERROR]   Run 2: ErrorCollectorRuleTest.multipleChecks:48 
+Expected: a collection containing "I'm not contained :("
+     but: 
+[INFO] 
+[ERROR]   ExpectedExceptionRuleTest.wrongExpectedException 
+Expected: an instance of java.lang.IllegalArgumentException
+     but: <java.lang.RuntimeException> is a java.lang.RuntimeException
+Stacktrace was: java.lang.RuntimeException
+	at de.systemoutprintln.junit4examples.rules.ExpectedExceptionRuleTest.wrongExpectedException(ExpectedExceptionRuleTest.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall$original$KqLKFVBI(FrameworkMethod.java:59)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall$original$KqLKFVBI$accessor$Xu7XmtoU(FrameworkMethod.java)
+	at org.junit.runners.model.FrameworkMethod$1$auxiliary$BYBGMcdb.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunReflectiveCall.intercept(RunReflectiveCall.java:83)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:258)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild$original$ee7SZdYa(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild$original$ee7SZdYa$accessor$OJCZ8KKj(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner$auxiliary$b5p4H5Zg.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunChild.intercept(RunChild.java:57)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.JUnit4.runChild$accessor$7JZhY1O7(JUnit4.java)
+	at org.junit.runners.JUnit4$auxiliary$ThInspVr.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.RunChild.intercept(RunChild.java:57)
+	at org.junit.runners.JUnit4.runChild(JUnit4.java)
+	at org.junit.runners.JUnit4.runChild(JUnit4.java)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run$original$r0DxS5mX(ParentRunner.java:413)
+	at org.junit.runners.ParentRunner.run$original$r0DxS5mX$accessor$dRoUiuLK(ParentRunner.java)
+	at org.junit.runners.ParentRunner$auxiliary$uQlyfgXi.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner.run$accessor$OJCZ8KKj(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.BlockJUnit4ClassRunner$auxiliary$epKrRCkm.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.BlockJUnit4ClassRunner.run(BlockJUnit4ClassRunner.java)
+	at org.junit.runners.JUnit4.run$accessor$7JZhY1O7(JUnit4.java)
+	at org.junit.runners.JUnit4$auxiliary$2AdWVKkx.call(Unknown Source)
+	at com.nordstrom.automation.junit.LifecycleHooks.callProxy(LifecycleHooks.java:392)
+	at com.nordstrom.automation.junit.Run.intercept(Run.java:64)
+	at org.junit.runners.JUnit4.run(JUnit4.java)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[ERROR] Errors: 
+[ERROR] Test mechanism.Test mechanism
+[ERROR]   Run 1: null
+[ERROR]   Run 2: null
+[INFO] 
+[ERROR]   BasicsTest.failingTestWithException:80 Runtime
+[ERROR]   BasicsTest.failingTestWithTimeout:110 » TestTimedOut test timed out after 1000...
+[ERROR]   BasicsTest.failingTestWithWrongException »  Unexpected exception, expected<jav...
+[ERROR]   ParameterizedTest.parameterized:83 Runtime
+[ERROR] de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest.multipleErrors(de.systemoutprintln.junit4examples.rules.ErrorCollectorRuleTest)
+[ERROR]   Run 1: ErrorCollectorRuleTest.multipleErrors:39 NullPointer
+[ERROR]   Run 2: ErrorCollectorRuleTest.multipleErrors:40 IllegalArgument
+[INFO] 
+[ERROR]   ExpectedExceptionRuleTest.unexpectedException:38 Runtime
+[INFO] 
+[ERROR] Tests run: 65, Failures: 8, Errors: 7, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 40.428 s
+[INFO] Finished at: 2020-09-07T15:28:55+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project junit4examples: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sergeyshukalovich/Documents/junit4-examples/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] There was an error in the forked process
+[ERROR] Test mechanism :: null
+[ERROR] org.apache.maven.surefire.booter.SurefireBooterForkException: There was an error in the forked process
+[ERROR] Test mechanism :: null
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.fork(ForkStarter.java:656)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:282)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:245)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1183)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1011)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:857)
+[ERROR] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:137)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:154)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:146)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:117)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:81)
+[ERROR] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:56)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:305)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:192)
+[ERROR] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:105)
+[ERROR] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:954)
+[ERROR] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+[ERROR] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:192)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[ERROR] 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -16,6 +16,7 @@
  */
 package de.systemoutprintln.junit4examples.categories;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +27,7 @@ import org.apache.logging.log4j.Logger;
  * the given category-
  */
 @Category(value = { IntegrationTests.class })
+@Maintainer("sshukalovich")
 public class RemoteServicesTest {
 
 	private Logger LOGGER = LogManager.getLogger(RemoteServicesTest.class);
@@ -35,7 +37,8 @@ public class RemoteServicesTest {
 		LOGGER.info("Log4j2 test");
 		System.out.println("I'm slow, because my class annotation says so!");
 	}
-	
+
+	@Maintainer("dmishin")
 	@Test
 	public void anotherTest() {
 		System.out.println("I'm also slow...");

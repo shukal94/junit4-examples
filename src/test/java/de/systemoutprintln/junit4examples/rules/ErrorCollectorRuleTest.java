@@ -23,10 +23,12 @@ import static org.hamcrest.core.IsNot.not;
 import java.util.Collections;
 import java.util.List;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
+@Maintainer("sshukalovich")
 public class ErrorCollectorRuleTest {
 
 	@Rule

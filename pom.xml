@@ -11,6 +11,12 @@
   <artifactId>junit4examples</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<agent_version>1.0.0.29-SNAPSHOT</agent_version>
+		<mvn_repo>${HOME}/.m2/repository</mvn_repo>
+		<agent_jar_path>${mvn_repo}/com/zebrunner/agent-junit/${agent_version}/agent-junit-${agent_version}.jar</agent_jar_path>
+	</properties>
+
 	<repositories>
 		<repository>
 			<id>qaprosoft_snapshots</id>
@@ -49,7 +55,7 @@
 	  <dependency>
 		  <groupId>com.zebrunner</groupId>
 		  <artifactId>agent-junit</artifactId>
-		  <version>1.0.0.21-SNAPSHOT</version>
+		  <version>1.0.0.29-SNAPSHOT</version>
 		  <scope>test</scope>
 	  </dependency>
 
@@ -70,34 +76,14 @@
 		  <version>2.13.3</version>
 	  </dependency>
 
-  </dependencies>
+	  <dependency>
+		  <groupId>com.codeborne</groupId>
+		  <artifactId>selenide</artifactId>
+		  <version>5.14.2</version>
+		  <scope>test</scope>
+	  </dependency>
 
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			&lt;!&ndash; This provides the path to the Java agent &ndash;&gt;-->
-<!--			<plugin>-->
-<!--				<groupId>org.apache.maven.plugins</groupId>-->
-<!--				<artifactId>maven-dependency-plugin</artifactId>-->
-<!--				<version>3.1.2</version>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<id>getClasspathFilenames</id>-->
-<!--						<goals>-->
-<!--							<goal>properties</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--			</plugin>-->
-<!--			<plugin>-->
-<!--				<groupId>org.apache.maven.plugins</groupId>-->
-<!--				<artifactId>maven-surefire-plugin</artifactId>-->
-<!--				<version>2.22.2</version>-->
-<!--				<configuration>-->
-<!--					<argLine>-javaagent:${com.zebrunner:agent-junit:jar}</argLine>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--		</plugins>-->
-<!--	</build>-->
+  </dependencies>
 	<build>
 	<plugins>
 		<plugin>
@@ -139,7 +125,7 @@
 			<artifactId>maven-surefire-plugin</artifactId>
 			<version>2.22.2</version>
 			<configuration>
-				<argLine>-javaagent:${project.build.directory}/agents/zebrunner-agent.jar</argLine>
+				<argLine>-javaagent:${HOME}/.m2/repository/com/zebrunner/agent-junit/1.0.0.29-SNAPSHOT/agent-junit-1.0.0.29-SNAPSHOT.jar</argLine>
 			</configuration>
 		</plugin>
 	</plugins>

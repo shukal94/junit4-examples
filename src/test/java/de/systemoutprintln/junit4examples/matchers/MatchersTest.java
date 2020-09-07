@@ -24,8 +24,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.Test;
 
+@Maintainer("sshukalovich")
 public class MatchersTest {
 
 	private static final String STRING = "I like using JUnit 4's matchers!";

@@ -21,10 +21,12 @@ import static org.hamcrest.core.AllOf.allOf;
 
 import static de.systemoutprintln.junit4examples.matchers.HasMessage.hasMessage;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+@Maintainer("sshukalovich")
 public class ExpectedExceptionRuleTest {
 
 	@Rule
