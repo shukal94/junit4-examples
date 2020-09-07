@@ -15,6 +15,12 @@
 		<agent_version>1.0.0.29-SNAPSHOT</agent_version>
 		<mvn_repo>${HOME}/.m2/repository</mvn_repo>
 		<agent_jar_path>${mvn_repo}/com/zebrunner/agent-junit/${agent_version}/agent-junit-${agent_version}.jar</agent_jar_path>
+		<reporting.enabled>${reportingEnabled}</reporting.enabled>
+		<reporting.server.hostname>${reportingServerHostname}</reporting.server.hostname>
+		<reporting.server.access-token>${reportingServerAccessToken}</reporting.server.access-token>
+		<reporting.run.display-name>${reportingRunDisplayName}</reporting.run.display-name>
+		<reporting.run.build>${reportingRunBuild}</reporting.run.build>
+		<reporting.run.environment>${reportingRunEnvironment}</reporting.run.environment>
 	</properties>
 
 	<repositories>
@@ -82,10 +88,17 @@
 		  <version>5.14.2</version>
 		  <scope>test</scope>
 	  </dependency>
+	  <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/properties-maven-plugin -->
+	  <dependency>
+		  <groupId>org.codehaus.mojo</groupId>
+		  <artifactId>properties-maven-plugin</artifactId>
+		  <version>1.0.0</version>
+	  </dependency>
+
 
   </dependencies>
 	<build>
-	<plugins>
+	  <plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
@@ -111,7 +124,7 @@
 							<artifactItem>
 								<groupId>com.zebrunner</groupId>
 								<artifactId>agent-junit</artifactId>
-								<version>1.0.0.21-SNAPSHOT</version>
+								<version>${agent_version}</version>
 								<outputDirectory>${project.build.directory}/agents</outputDirectory>
 								<destFileName>zebrunner-agent.jar</destFileName>
 							</artifactItem>
@@ -123,14 +136,29 @@
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-surefire-plugin</artifactId>
-			<version>2.22.2</version>
+			<version>2.22.1</version>
 			<configuration>
-				<argLine>-javaagent:${HOME}/.m2/repository/com/zebrunner/agent-junit/1.0.0.29-SNAPSHOT/agent-junit-1.0.0.29-SNAPSHOT.jar</argLine>
+				<argLine>-javaagent:${agent_jar_path}</argLine>
 			</configuration>
 		</plugin>
-	</plugins>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>properties-maven-plugin</artifactId>
+			<version>1.0.0</version>
+			<configuration>
+				<outputFile>src/main/resources/agent.properties</outputFile>
+			</configuration>
+            <executions>
+                <execution>
+                    <id>default-compile</id>
+                    <goals>
+                        <goal>write-project-properties</goal>
+                    </goals>
+                    <phase>generate-resources</phase>
+                </execution>
+            </executions>
+		</plugin>
+      </plugins>
 	</build>
-
-
 
 </project>

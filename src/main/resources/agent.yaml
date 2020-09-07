@@ -1,9 +1,0 @@
-reporting:
-  enabled: true
-  server:
-    hostname: https://stage.qaprosoft.farm
-    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwicGFzc3dvcmQiOiJGYzVHY1EwMVZsUUtTaWF4WDVVbjJEdDZab01wMTdmdiIsInRlbmFudCI6InN0YWdlIiwiZXhwIjozNzQ2OTYxMzc2fQ._d837LgBafvG5l1rE6p0okeAzSzRPH69aACJYnCEGl967TKzyERNHGJkNRDGdcwIWm2oDc0e9Ev3lCWO8zTqng
-  run:
-    display-name: Junit4 Feautures Test
-    build: 1.0.0.29-SNAPSHOT
-    environment: stage
